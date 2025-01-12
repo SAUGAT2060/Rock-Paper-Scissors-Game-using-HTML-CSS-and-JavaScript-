@@ -1,0 +1,147 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body & Background */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+/* Main Game Container */
+.game-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  max-width: 600px;
+  width: 90%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Title Styling */
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #fbc2eb, #a6c1ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 105, 180, 1);
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #ff69b4; /* Neon Pink Border */
+  border-radius: 15px;
+  animation: neonGlow 1.5s infinite alternate;
+}
+
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4, 0 0 45px #ff69b4;
+  }
+  100% {
+    box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4, 0 0 60px #ff69b4;
+  }
+}
+
+/* Scoreboard Styling */
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.scoreboard p {
+  margin: 0;
+}
+
+/* Player's Choices */
+.choices {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.choice {
+  font-size: 3rem;
+  padding: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6a88, #ff99ac);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.choice:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+}
+
+/* Game Result Display */
+.game-result {
+  font-size: 1.8rem;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #89f7fe, #66a6ff);
+  animation: fadeIn 1s ease;
+  box-shadow: 0 0 15px rgba(102, 166, 255, 0.7);
+}
+
+/* Button Styling */
+.reset-button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  color: white;
+  transition: transform 0.3s, background 0.3s;
+  margin-top: 20px;
+}
+
+.reset-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to right, #ff7eb3, #ff758c);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
